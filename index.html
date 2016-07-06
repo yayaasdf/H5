@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <div id="xycoordinates"></div>
+        <canvas id="yq" width="100px" height="100px" style="border:1px solid #c3c3c3;" onmousemove="cnvs_getCoordinates(event)"></canvas>
+        <script type="text/javascript">
+           var haha = document.getElementById("yq");
+            var huatu = haha.getContext("2d");
+            huatu.fillStyle = "#FF0000";
+            huatu.beginPath();
+            huatu.arc(70,18,15,0,Math.PI*2,true);
+            huatu.closePath();
+            huatu.fill();
+
+           function cnvs_getCoordinates(e)
+           {
+               x=e.clientX;
+               y=e.clientY;
+               document.getElementById("xycoordinates").innerHTML="Coordinates: (" + x + "," + y + ")";
+               document.getElementById("xycoordinates").style.position="absolute";
+               document.getElementById("xycoordinates").style.left = "200px";
+
+           }
+        </script>
+
+        <div id="abc"></div>
+        <script type="text/javascript">
+            var c = document.getElementById("abc");
+            var cxt = c.getContext("2d");
+            cxt.moveto(10,10);
+            cxt.lineto(150,50);
+            cxt.lineto(10,50);
+            cxt.stroke();
+        </script>
+
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+    </body>
+</html>
